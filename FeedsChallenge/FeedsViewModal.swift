@@ -32,7 +32,7 @@ class FeedsViewModal {
     }
     
     var totalCount: Int {
-        return total
+        return totalCount
     }
     
     var currentCount: Int {
@@ -54,11 +54,10 @@ class FeedsViewModal {
                 if (isSuccess) {
                     DispatchQueue.main.async {
                     self.isFetchInProgress = false
-                    self.total = data.count
+                    self.total = 50 //data.count, assuming we get total number of feeds from the web service
                     for feed in data {
                         self.feedsData.append(feed)
                     }
-                    
                     if (self.isNextFetch) {
                         self.setIsNextFetch(invoke: false)
                         let indexPathsToReload = self.calculateIndexPathsToReload(from: data)
