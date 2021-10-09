@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        return indexPath.row == viewModal.currentCount-1
+        return indexPath.row >= viewModal.currentCount
     }
     
     func visibleRowsToReload(with indexPaths: [IndexPath]) -> [IndexPath] {
